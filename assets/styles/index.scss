@@ -1,0 +1,31 @@
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import "bourbon/_bourbon.scss";
+@import "base/base";
+
+$content-window-width: 350px;
+$content-window-height: $content-window-width * 1.333;
+$background-color: #22a;
+$h1-size: $base-font-size * 3;
+
+body {
+  background-color: $background-color;
+}
+
+#page-title {
+  @include position(relative, 5em null null null);
+  @include size(max-content min-content);
+  margin: 0 auto;
+}
+
+h1 {
+  color: #CCC;
+  font-size: $h1-size;
+}
+
+#content-window {
+  @include position(relative, 5em null null null);
+  margin: 0 auto;
+  @include size($content-window-width $content-window-height);
+  background-color: shade($background-color, 20%);
+}
