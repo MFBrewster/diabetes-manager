@@ -12,20 +12,25 @@ body {
   background-color: $background-color;
 }
 
+h1 {
+  color: #CCC;
+  font-size: $h1-size;
+}
+
+.content {
+  @include size(100%);
+  background-color: shade($background-color, 20%);
+}
+
 #page-title {
   @include position(relative, 5em null null null);
   @include size(max-content min-content);
   margin: 0 auto;
 }
 
-h1 {
-  color: #CCC;
-  font-size: $h1-size;
-}
-
 #content-window {
   @include position(relative, 5em null null null);
   margin: 0 auto;
   @include size($content-window-width $content-window-height);
-  background-color: shade($background-color, 20%);
+  background-color: #eee;
 }
