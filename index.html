@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Diabetes Manager</title>
+
+      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <div id="page-title">
+        <h1>Diabetes Manager</h1>
+      </div>
+
+      <!-- This div is the center content window which encompasses
+      all of the other windows -->
+      <div id="content-window">
+
+        <div id="sign-up-window" class="content form">
+          <form id="sign-up">
+            <p>Sign in</p>
+            <label>E-mail
+              <input class="form-field" type="text" name="credentials[email]" value="">
+            </label><br>
+            <label>Password
+              <input class="form-field" type="password" name="credentials[password]" value="">
+            </label><br>
+            <label>Confirm Password
+              <input name="credentials[password_confirmation]" type="password" value="">
+            </label><br>
+            <input type="submit" name="submit" value="Sign up">
+          </form>
+        </div>
+
+      </div>
+
+    </body>
+</html>
