@@ -51,10 +51,27 @@
           </div>
         </div>
 
+        <div id="change-password-window" class="content form">
+          <form id="change-password">
+            <p>Change password</p>
+            <label>Old Password
+              <input class="form-field" type="password" name="passwords[old]" value="">
+            </label><br>
+            <label>New Password
+              <input class="form-field" type="password" name="passwords[new]" value="">
+            </label>
+            <input type="submit" name="submit" value="Change Password">
+          </form>
+          <div id="to-main" class="sign-link">
+            <p><span class="window-link">Back to main menu</span>.</p>
+          </div>
+        </div>
+
         <div id="main-window" class="content">
-          <div id="signed-in-as">
-            <p>Signed in as:</p>
-            <p id="as-whom"></p>
+          <div id="user-options">
+            <p>Signed in as: <span id="as-whom"></span></p>
+            <p><span id="to-change-password" class="window-link">Change password</span> |
+               <span id="sign-out" class="window-link">Sign out</span></p>
           </div>
         </div>
 

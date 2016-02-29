@@ -1,6 +1,6 @@
 'use strict';
 
-//const globalObjects = require('./global-objects');
+// const globalObjects = require('./global-objects');
 const delayTime = 200;
 
 const hide = function() {
@@ -23,12 +23,13 @@ const switchTo = {
   main: function() {
     fadeOut();
     $('#main-window').delay(delayTime).fadeIn();
-  }
+  },
+  changePassword: function() {
+    fadeOut();
+    $('#change-password-window').delay(delayTime).fadeIn();
+  },
 };
 
-// const showUserOpts = function() {
-//
-// };
 
 module.exports = {
   hide,

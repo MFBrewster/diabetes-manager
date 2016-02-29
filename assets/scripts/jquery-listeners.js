@@ -6,9 +6,13 @@ const conBox = require('./content-box-control');
 let userHandler = function() {
   $('#sign-up').on('submit', userFunc.signUp);
   $('#sign-in').on('submit', userFunc.signIn);
+  $('#sign-out').on('click', userFunc.signOut);
+  $('#change-password ').on('submit', userFunc.changePassword);
+
   $('#not-yet-user').on('click', conBox.switchTo.signUp);
   $('#to-sign-in').on('click', conBox.switchTo.signIn);
-  //$('#signed-in-as').hover();
+  $('#to-main').on('click', conBox.switchTo.main);
+  $('#to-change-password').on('click', conBox.switchTo.changePassword);
 };
 
 $(document).ready(() => {
