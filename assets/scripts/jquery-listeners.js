@@ -2,22 +2,24 @@
 
 const userFunc = require('./user-functions');
 
+const delayTime = 200;
+
 const hideForms = function() {
   $('.content').hide();
 };
 
-const showLogIn = function() {
-  $('#sign-in-window').show();
+const fadeOutForms = function() {
+  $('.content').fadeOut(delayTime);
 };
 
 const switchToWindow = {
   signUp: function() {
-    hideForms();
-    $('#sign-up-window').show();
+    fadeOutForms();
+    $('#sign-up-window').delay(delayTime).fadeIn();
   },
   signIn: function() {
-    hideForms();
-    $('#sign-in-window').show();
+    fadeOutForms();
+    $('#sign-in-window').delay(delayTime).fadeIn();
   },
 };
 
@@ -28,6 +30,7 @@ let userHandler = function() {
 };
 
 $(document).ready(() => {
+  hideForms();
   userHandler();
-  switchToWindow.signIn();
+  $('#sign-in-window').show();
 });

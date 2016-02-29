@@ -3,34 +3,58 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import "bourbon/_bourbon.scss";
 @import "base/base";
 
-$content-window-width: 350px;
-$content-window-height: $content-window-width * 1.333;
-$background-color: #22a;
+$content-window-width: 80%;
+$content-window-height: 50em;
+$background-color: #115;
 $h1-size: $base-font-size * 3;
+$h2-size: $base-font-size * 2.25;
+$content-text-size: $base-font-size * 1.5;
+$off-white: #AAA;
 
 body {
+  margin-top: 2em;
   background-color: $background-color;
 }
 
+h1, h2 {
+  color: $off-white;
+}
+
 h1 {
-  color: #CCC;
+  text-align: center;
   font-size: $h1-size;
+}
+
+h2 {
+  font-size: $h2-size;
 }
 
 .content {
   @include size(100%);
-  background-color: shade($background-color, 20%);
+  background-color: shade($background-color, 30%);
+  @include padding(1em 3em 3em 3em);
+  font-size: $content-text-size;
+  color: $off-white;
+  font-family: $verdana;
+  p {
+    margin-top: 2em;
+  }
 }
 
-#page-title {
-  @include position(relative, 5em null null null);
-  @include size(max-content min-content);
-  margin: 0 auto;
+.window-link {
+  color: #FFF;
+}
+
+.window-link:hover  {
+  cursor: pointer;
 }
 
 #content-window {
-  @include position(relative, 5em null null null);
   margin: 0 auto;
   @include size($content-window-width $content-window-height);
   background-color: #eee;
+  border-width: 1em;
+  border-style: solid;
+  border-radius: 0.5em;
+  border-color: #ddd;
 }
