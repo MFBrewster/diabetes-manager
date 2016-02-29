@@ -10,6 +10,7 @@ $h1-size: $base-font-size * 3;
 $h2-size: $base-font-size * 2.25;
 $content-text-size: $base-font-size * 1.5;
 $off-white: #AAA;
+$border-color: #CCF;
 
 body {
   margin-top: 2em;
@@ -18,6 +19,7 @@ body {
 
 h1, h2 {
   color: $off-white;
+  font-family: 'Lora', serif;
 }
 
 h1 {
@@ -37,7 +39,7 @@ h2 {
   color: $off-white;
   font-family: $verdana;
   p {
-    margin-top: 2em;
+    margin-top: 1.5em;
   }
 }
 
@@ -49,6 +51,27 @@ h2 {
   cursor: pointer;
 }
 
+#signed-in-as {
+  border-width: .25em;
+  border-style: solid;
+  border-radius: 0.25em;
+  border-color: shade($border-color, 20%);
+  background-color: shade($border-color, 20%);
+  width: min-content;
+  p {
+    margin: -.25em;
+    padding: -.25em;
+    font-size: $base-font-size * .75;
+    color: black;
+  }
+}
+
+#signed-in-as:hover {
+  cursor: pointer;
+  border-color: shade($border-color, 30%);
+  background-color: shade($border-color, 30%);
+}
+
 #content-window {
   margin: 0 auto;
   @include size($content-window-width $content-window-height);
@@ -56,5 +79,5 @@ h2 {
   border-width: 1em;
   border-style: solid;
   border-radius: 0.5em;
-  border-color: #ddd;
+  border-color: $border-color;
 }

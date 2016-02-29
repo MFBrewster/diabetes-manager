@@ -1,36 +1,18 @@
 'use strict';
 
 const userFunc = require('./user-functions');
-
-const delayTime = 200;
-
-const hideForms = function() {
-  $('.content').hide();
-};
-
-const fadeOutForms = function() {
-  $('.content').fadeOut(delayTime);
-};
-
-const switchToWindow = {
-  signUp: function() {
-    fadeOutForms();
-    $('#sign-up-window').delay(delayTime).fadeIn();
-  },
-  signIn: function() {
-    fadeOutForms();
-    $('#sign-in-window').delay(delayTime).fadeIn();
-  },
-};
+const conBox = require('./content-box-control');
 
 let userHandler = function() {
   $('#sign-up').on('submit', userFunc.signUp);
   $('#sign-in').on('submit', userFunc.signIn);
-  $('#not-yet-user').on('click', switchToWindow.signUp);
+  $('#not-yet-user').on('click', conBox.switchTo.signUp);
+  $('#to-sign-in').on('click', conBox.switchTo.signIn);
+  //$('#signed-in-as').hover();
 };
 
 $(document).ready(() => {
-  hideForms();
+  conBox.hide();
   userHandler();
   $('#sign-in-window').show();
 });

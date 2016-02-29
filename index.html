@@ -5,6 +5,7 @@
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body class="container-fluid">
       <div id="page-title">
@@ -14,22 +15,6 @@
       <!-- This div is the center content window which encompasses
       all of the other windows -->
       <div id="content-window">
-
-        <div id="sign-up-window" class="content form">
-          <form id="sign-up">
-            <h2>Sign in</h2>
-            <label>E-mail
-              <input class="form-field" type="text" name="credentials[email]" value="">
-            </label><br>
-            <label>Password
-              <input class="form-field" type="password" name="credentials[password]" value="">
-            </label><br>
-            <label>Confirm Password
-              <input name="credentials[password_confirmation]" type="password" value="">
-            </label><br>
-            <input type="submit" name="submit" value="Sign up">
-          </form>
-        </div>
 
         <div id="sign-in-window" class="content form">
           <form id="sign-in">
@@ -42,8 +27,34 @@
             </label><br>
             <input type="submit" name="submit" value="Sign In">
           </form>
-          <div id="not-yet-user">
-            <p>Not signed up yet? <span class="window-link">Click here</span>.</p>
+          <div id="not-yet-user" class="sign-link">
+            <p>Not signed up yet? <span class="window-link">Sign up here</span>.</p>
+          </div>
+        </div>
+
+        <div id="sign-up-window" class="content form">
+          <form id="sign-up">
+            <h2>Sign up</h2>
+            <label>E-mail
+              <input class="form-field" type="text" name="credentials[email]" value="">
+            </label><br>
+            <label>Password
+              <input class="form-field" type="password" name="credentials[password]" value="">
+            </label><br>
+            <label>Confirm Password
+              <input name="credentials[password_confirmation]" type="password" value="">
+            </label><br>
+            <input type="submit" name="submit" value="Sign up">
+          </form>
+          <div id="to-sign-in" class="sign-link">
+            <p>Already signed up? <span class="window-link">Sign in here</span>.</p>
+          </div>
+        </div>
+
+        <div id="main-window" class="content">
+          <div id="signed-in-as">
+            <p>Signed in as:</p>
+            <p id="as-whom"></p>
           </div>
         </div>
 
