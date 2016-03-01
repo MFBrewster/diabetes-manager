@@ -1,12 +1,12 @@
 'use strict';
 
-const conBox = require('./content-box-control');
+const viewBox = require('./content-box-control');
 const globalObjects = require('./global-objects');
 
 const successToMain = function() {
-  conBox.fadeOut();
+  viewBox.fadeOut();
   $('#as-whom').html(globalObjects.user.email);
-  conBox.switchTo.main();
+  viewBox.switchTo.main();
 };
 
 const assignUserData = function(data) {
@@ -64,8 +64,8 @@ const signOut = function() {
     }
   }).done(function() {
     globalObjects.user = {};
-    conBox.fadeOut();
-    conBox.switchTo.signIn();
+    viewBox.fadeOut();
+    viewBox.switchTo.signIn();
   }).fail(function(data) {
     console.error(data);
   });

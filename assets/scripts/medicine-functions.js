@@ -1,12 +1,12 @@
 'use strict';
 
-const conBox = require('./content-box-control');
+const viewBox = require('./content-box-control');
 const globalObjects = require('./global-objects');
 
 const returnToMain = function() {
-  conBox.fadeOut();
+  viewBox.fadeOut();
   $('#as-whom').html(globalObjects.user.email);
-  conBox.switchTo.main();
+  viewBox.switchTo.main();
 };
 
 const newMedicine = function(e) {

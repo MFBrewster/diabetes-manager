@@ -1,6 +1,7 @@
 'use strict';
 
 // const globalObjects = require('./global-objects');
+const dataGen = require('./data-generators.js');
 const delayTime = 200;
 
 const hide = function() {
@@ -10,10 +11,6 @@ const hide = function() {
 const fadeOut = function() {
   $('.content').fadeOut(delayTime);
 };
-
-// const clearForm = function() {
-//   $('.form-field').val('');
-// };
 
 const switchTo = {
   signUp: function() {
@@ -38,6 +35,7 @@ const switchTo = {
   },
   medicines: function() {
     fadeOut();
+    dataGen.userMedicines();
     $('#medicines-window').delay(delayTime).fadeIn();
   },
 };

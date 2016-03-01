@@ -8,6 +8,7 @@ $content-window-height: 55em;
 $background-color: #115;
 $h1-size: $base-font-size * 3;
 $h2-size: $base-font-size * 2.25;
+$h3-size: $base-font-size * 1.5;
 $content-text-size: $base-font-size * 1.5;
 $off-white: #AAA;
 $border-color: #CCF;
@@ -29,6 +30,26 @@ h1 {
 
 h2 {
   font-size: $h2-size;
+}
+
+
+.med-listing {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  h3 {
+    font-size: $h2-size;
+    color: #444;
+    font-family: 'Cinzel', serif;
+    margin: 0 0 -.9em 0;
+    padding: 0;
+    border: 0;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
 }
 
 .content {

@@ -2,7 +2,7 @@
 
 const userFunc = require('./user-functions');
 const medFunc = require('./medicine-functions');
-const conBox = require('./content-box-control');
+const viewBox = require('./content-box-control');
 
 let userHandler = function() {
   $('#sign-up').on('submit', userFunc.signUp);
@@ -12,16 +12,16 @@ let userHandler = function() {
 
   $('#new-medicine').on('submit', medFunc.newMedicine);
 
-  $('#not-yet-user').on('click', conBox.switchTo.signUp);
-  $('#to-sign-in').on('click', conBox.switchTo.signIn);
-  $('.to-main').on('click', conBox.switchTo.main);
-  $('#to-change-password').on('click', conBox.switchTo.changePassword);
-  $('#to-new-medicine').on('click', conBox.switchTo.newMedicine);
-  $('#to-medicines').on('click', conBox.switchTo.medicines);
+  $('#not-yet-user').on('click', viewBox.switchTo.signUp);
+  $('#to-sign-in').on('click', viewBox.switchTo.signIn);
+  $('.to-main').on('click', viewBox.switchTo.main);
+  $('#to-change-password').on('click', viewBox.switchTo.changePassword);
+  $('#to-new-medicine').on('click', viewBox.switchTo.newMedicine);
+  $('#to-medicines').on('click', viewBox.switchTo.medicines);
 };
 
 $(document).ready(() => {
-  conBox.hide();
+  viewBox.hide();
   userHandler();
   $('#sign-in-window').show();
 });
