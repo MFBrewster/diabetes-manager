@@ -45,6 +45,11 @@ const switchTo = {
     dataGen.userDoses();
     $('#doses-window').delay(delayTime).fadeIn();
   },
+  newDose: function() {
+    fadeOut();
+    dataGen.getMeds();
+    $('#new-dose-window').delay(delayTime).fadeIn();
+  },
 };
 
 
