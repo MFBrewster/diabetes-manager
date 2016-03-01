@@ -4,7 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import "base/base";
 
 $content-window-width: 80%;
-$content-window-height: 50em;
+$content-window-height: 55em;
 $background-color: #115;
 $h1-size: $base-font-size * 3;
 $h2-size: $base-font-size * 2.25;
@@ -52,10 +52,10 @@ h2 {
 }
 
 .large  {
-  height: 10em;
+  height: 8em;
 }
 
-#user-options {
+.user-options {
   p {
     margin: 0;
     padding: 0;

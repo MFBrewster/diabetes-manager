@@ -14,9 +14,10 @@ let userHandler = function() {
 
   $('#not-yet-user').on('click', conBox.switchTo.signUp);
   $('#to-sign-in').on('click', conBox.switchTo.signIn);
-  $('#to-main').on('click', conBox.switchTo.main);
+  $('.to-main').on('click', conBox.switchTo.main);
   $('#to-change-password').on('click', conBox.switchTo.changePassword);
   $('#to-new-medicine').on('click', conBox.switchTo.newMedicine);
+  $('#to-medicines').on('click', conBox.switchTo.medicines);
 };
 
 $(document).ready(() => {

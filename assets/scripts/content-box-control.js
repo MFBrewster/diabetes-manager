@@ -36,6 +36,10 @@ const switchTo = {
     fadeOut();
     $('#new-medicine-window').delay(delayTime).fadeIn();
   },
+  medicines: function() {
+    fadeOut();
+    $('#medicines-window').delay(delayTime).fadeIn();
+  },
 };
 
 

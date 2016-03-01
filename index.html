@@ -62,7 +62,7 @@
             </label>
             <input type="submit" name="submit" value="Change Password">
           </form>
-          <div id="to-main" class="sign-link">
+          <div class="sign-link to-main">
             <p><span class="window-link">Back to main menu</span>.</p>
           </div>
         </div>
@@ -71,7 +71,21 @@
           <div id="to-new-medicine">
             <p><span class="window-link">Add medication</span></p>
           </div>
-          <div id="user-options">
+          <div id="to-medicines">
+            <p><span class="window-link">Your prescriptions</span></p>
+          </div>
+          <div class="user-options">
+            <p>Signed in as: <span id="as-whom"></span></p>
+            <p><span id="to-change-password" class="window-link">Change password</span> |
+               <span id="sign-out" class="window-link">Sign out</span></p>
+          </div>
+        </div>
+
+        <div id="medicines-window" class="content">
+          <div class="sign-link to-main">
+            <p><span class="window-link">Back to main menu</span>.</p>
+          </div>
+          <div class="user-options">
             <p>Signed in as: <span id="as-whom"></span></p>
             <p><span id="to-change-password" class="window-link">Change password</span> |
                <span id="sign-out" class="window-link">Sign out</span></p>
@@ -80,7 +94,7 @@
 
         <div id="new-medicine-window" class="content form">
           <form id="new-medicine">
-            <p>New medicine</p>
+            <h2>New medicine</h2>
             <label>Medicine name
               <input class="form-field" type="text" name="medicines[name]" value="">
             </label><br>
@@ -92,6 +106,9 @@
             </label>
             <input type="submit" name="submit" value="Create new medicine">
           </form>
+          <div class="sign-link to-main">
+            <p><span class="window-link">Back to main menu</span>.</p>
+          </div>
         </div>
 
       </div>
