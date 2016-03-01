@@ -2,7 +2,6 @@
 
 const conBox = require('./content-box-control');
 const globalObjects = require('./global-objects');
-const baseUrl = 'http://localhost:3000';
 
 const successToMain = function() {
   conBox.fadeOut();
@@ -18,7 +17,7 @@ const signUp = function(e) {
   e.preventDefault();
   var formData = new FormData(e.target);
   $.ajax({
-    url: baseUrl + '/sign-up',
+    url: globalObjects.baseUrl + '/sign-up',
     method: 'POST',
     contentType: false,
     processData: false,
@@ -37,7 +36,7 @@ const signIn = function(e) {
   e.preventDefault();
   var formData = new FormData(e.target);
   $.ajax({
-    url: baseUrl + '/sign-in',
+    url: globalObjects.baseUrl + '/sign-in',
     method: 'POST',
     contentType: false,
     processData: false,
@@ -58,7 +57,7 @@ const signOut = function() {
   }
 
   $.ajax({
-    url: baseUrl + '/sign-out/' + globalObjects.user.id,
+    url: globalObjects.baseUrl + '/sign-out/' + globalObjects.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + globalObjects.user.token,
@@ -80,7 +79,7 @@ const changePassword = function(e) {
 
   var formData = new FormData(e.target);
   $.ajax({
-    url: baseUrl + '/change-password/' + globalObjects.user.id,
+    url: globalObjects.baseUrl + '/change-password/' + globalObjects.user.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + globalObjects.user.token,

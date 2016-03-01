@@ -1,6 +1,7 @@
 'use strict';
 
 const userFunc = require('./user-functions');
+const medFunc = require('./medicine-functions');
 const conBox = require('./content-box-control');
 
 let userHandler = function() {
@@ -8,6 +9,8 @@ let userHandler = function() {
   $('#sign-in').on('submit', userFunc.signIn);
   $('#sign-out').on('click', userFunc.signOut);
   $('#change-password ').on('submit', userFunc.changePassword);
+
+  $('#new-medicine').on('submit', medFunc.newMedicine);
 
   $('#not-yet-user').on('click', conBox.switchTo.signUp);
   $('#to-sign-in').on('click', conBox.switchTo.signIn);
