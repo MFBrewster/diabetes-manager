@@ -10,6 +10,7 @@ const hide = function() {
 
 const fadeOut = function() {
   $('.content').fadeOut(delayTime);
+  $('#med-list').html('');
 };
 
 const switchTo = {
