@@ -24,9 +24,9 @@ const signUp = function(e) {
     processData: false,
     data: formData
   }).done(function(data){
-      $('.form-field').val('');
-      assignUserData(data);
-      successToMain();
+    $('.form-field').val('');
+    assignUserData(data);
+    successToMain();
   }).fail(function(jqxhr) {
     $('.form-field').val('');
     console.error(jqxhr);
