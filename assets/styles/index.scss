@@ -51,17 +51,16 @@ h2 {
   cursor: pointer;
 }
 
+.large  {
+  height: 10em;
+}
+
 #user-options {
   p {
     margin: 0;
     padding: 0;
     font-size: $base-font-size * .75;
   }
-}
-
-#signed-in-as:hover {
-  cursor: pointer;
-  border-color: shade($border-color, 30%);
 }
 
 #content-window {

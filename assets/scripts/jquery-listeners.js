@@ -13,6 +13,7 @@ let userHandler = function() {
   $('#to-sign-in').on('click', conBox.switchTo.signIn);
   $('#to-main').on('click', conBox.switchTo.main);
   $('#to-change-password').on('click', conBox.switchTo.changePassword);
+  $('#to-new-medicine').on('click', conBox.switchTo.newMedicine);
 };
 
 $(document).ready(() => {

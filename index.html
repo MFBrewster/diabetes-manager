@@ -68,11 +68,30 @@
         </div>
 
         <div id="main-window" class="content">
+          <div id="to-new-medicine">
+            <p><span class="window-link">Add medication</span></p>
+          </div>
           <div id="user-options">
             <p>Signed in as: <span id="as-whom"></span></p>
             <p><span id="to-change-password" class="window-link">Change password</span> |
                <span id="sign-out" class="window-link">Sign out</span></p>
           </div>
+        </div>
+
+        <div id="new-medicine-window" class="content form">
+          <form id="new-medicine">
+            <p>New medicine</p>
+            <label>Medicine name
+              <input class="form-field" type="text" name="medicines[name]" value="">
+            </label><br>
+            <label>Unit of measurement (abrv)
+              <input class="form-field" type="text" name="medicines[unit_name]" maxlength="2" value="">
+            </label>
+            <label>Notes
+              <input class="large form-field" type="text" name="medicines[notes]" value="">
+            </label>
+            <input type="submit" name="submit" value="Change Password">
+          </form>
         </div>
 
       </div>

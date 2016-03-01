@@ -11,6 +11,10 @@ const fadeOut = function() {
   $('.content').fadeOut(delayTime);
 };
 
+// const clearForm = function() {
+//   $('.form-field').val('');
+// };
+
 const switchTo = {
   signUp: function() {
     fadeOut();
@@ -27,6 +31,10 @@ const switchTo = {
   changePassword: function() {
     fadeOut();
     $('#change-password-window').delay(delayTime).fadeIn();
+  },
+  newMedicine: function() {
+    fadeOut();
+    $('#new-medicine-window').delay(delayTime).fadeIn();
   },
 };
 
