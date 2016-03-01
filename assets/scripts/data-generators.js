@@ -17,7 +17,6 @@ const userMedicines = function() {
     },
     dataType: 'json'
   }).done(function(users){
-    console.log(users);
     displayMedicines(users);
   });
 };

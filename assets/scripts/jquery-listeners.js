@@ -7,8 +7,8 @@ const viewBox = require('./content-box-control');
 let userHandler = function() {
   $('#sign-up').on('submit', userFunc.signUp);
   $('#sign-in').on('submit', userFunc.signIn);
-  $('#sign-out').on('click', userFunc.signOut);
-  $('#change-password ').on('submit', userFunc.changePassword);
+  $('.sign-out').on('click', userFunc.signOut);
+  $('.change-password ').on('submit', userFunc.changePassword);
 
   $('#new-medicine').on('submit', medFunc.newMedicine);
 
