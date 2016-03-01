@@ -9,8 +9,9 @@ const hide = function() {
 };
 
 const fadeOut = function() {
-  $('.content').fadeOut(delayTime);
   $('#med-list').html('');
+  $('#dose-list').html('');
+  $('.content').fadeOut(delayTime);
 };
 
 const switchTo = {
@@ -38,6 +39,11 @@ const switchTo = {
     fadeOut();
     dataGen.userMedicines();
     $('#medicines-window').delay(delayTime).fadeIn();
+  },
+  doses: function() {
+    fadeOut();
+    dataGen.userDoses();
+    $('#doses-window').delay(delayTime).fadeIn();
   },
 };
 

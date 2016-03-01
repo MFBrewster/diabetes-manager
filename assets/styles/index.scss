@@ -32,8 +32,11 @@ h2 {
   font-size: $h2-size;
 }
 
+.med-name {
+  font-family: 'Cinzel', serif;
+}
 
-.med-listing {
+.listing {
   margin: 0;
   padding: 0;
   border: 0;
@@ -59,6 +62,8 @@ h2 {
   font-size: $content-text-size;
   color: $off-white;
   font-family: $verdana;
+  overflow-x: hidden;
+  overflow-y: scroll;
   p {
     margin-top: 1.5em;
   }

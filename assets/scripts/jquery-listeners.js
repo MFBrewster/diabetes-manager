@@ -18,6 +18,7 @@ let userHandler = function() {
   $('.to-change-password').on('click', viewBox.switchTo.changePassword);
   $('#to-new-medicine').on('click', viewBox.switchTo.newMedicine);
   $('#to-medicines').on('click', viewBox.switchTo.medicines);
+  $('#to-doses').on('click', viewBox.switchTo.doses);
 };
 
 $(document).ready(() => {
