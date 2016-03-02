@@ -1,23 +1,22 @@
 'use strict';
 
 const viewBox = require('./content-box-control');
+const dataGen = require('./data-generators.js');
 const globalObjects = require('./global-objects');
 
 const returnToNewDose = function() {
-  viewBox.fadeOut();
   $('#as-whom').html(globalObjects.user.email);
   viewBox.switchTo.newDose();
 };
 
 const returnToDoses = function() {
-  viewBox.fadeOut();
   $('#as-whom').html(globalObjects.user.email);
   viewBox.switchTo.doses();
 };
 
 const newMedicine = function(e) {
   e.preventDefault();
-  var formData = new FormData(e.target);
+  let formData = new FormData(e.target);
   $.ajax({
     url: globalObjects.baseUrl + '/medicines',
     method: 'POST',
@@ -37,7 +36,7 @@ const newMedicine = function(e) {
 
 const newDose = function(e) {
   e.preventDefault();
-  var formData = new FormData(e.target);
+  let formData = new FormData(e.target);
   formData.append("doses[user_id]", globalObjects.user.id);
   $.ajax({
     url: globalObjects.baseUrl + '/doses',
@@ -56,7 +55,27 @@ const newDose = function(e) {
   });
 };
 
+const deleteDose = function(e) {
+  e.preventDefault();
+  let doseId = $(e.target).attr('data-id');
+  console.log(doseId);
+  $.ajax({
+    url: globalObjects.baseUrl + '/doses/' + doseId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + globalObjects.user.token,
+    }
+  }).done(function(data){
+    console.log(data);
+    $('.data-list').html('');
+    dataGen.userDoses();
+  }).fail(function(data) {
+    console.error(data);
+  });
+};
+
 module.exports = {
   newMedicine,
   newDose,
+  deleteDose,
 };

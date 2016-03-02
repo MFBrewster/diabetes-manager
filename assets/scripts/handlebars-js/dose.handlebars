@@ -1,4 +1,7 @@
 <div class="dose listing">
   <h3><small>{{label}}</small></h3>
-  <p><span class="med-name">{{medicine.name}}</span>, {{size}} {{medicine.unit_name}}, {{time}}</p>
+  <p class="dose-info"><span class="med-name">{{medicine.name}}</span>, {{size}} {{medicine.unit_name}}, {{time}}</p>
+  <p class="window-link dose-options"><span class="edit-dose" data-id="{{id}}">edit</span> |
+     <span class="delete-dose" data-id="{{id}}">delete</span></p>
+  {{!-- <button type="button" class="btn btn-primary btn-xs delete-post"">X</button> --}}
 </div>

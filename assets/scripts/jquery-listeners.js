@@ -4,6 +4,8 @@ const userFunc = require('./user-functions');
 const medFunc = require('./medicine-functions');
 const viewBox = require('./content-box-control');
 
+
+
 let userHandler = function() {
   $('#sign-up').on('submit', userFunc.signUp);
   $('#sign-in').on('submit', userFunc.signIn);
@@ -12,6 +14,8 @@ let userHandler = function() {
 
   $('#new-medicine').on('submit', medFunc.newMedicine);
   $('#new-dose').on('submit', medFunc.newDose);
+
+  $('#dose-list').on('click', '.delete-dose', medFunc.deleteDose);
 
   $('#not-yet-user').on('click', viewBox.switchTo.signUp);
   $('#to-sign-in').on('click', viewBox.switchTo.signIn);
