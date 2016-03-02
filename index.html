@@ -76,7 +76,7 @@
             <p><span class="window-link">Your doses</span></p>
           </div>
           <div class="user-options">
-            <p>Signed in as: <span id="as-whom"></span></p>
+            <p>Signed in as: <span class="as-whom"></span></p>
             <p><span class="window-link to-change-password">Change password</span> |
                <span class="window-link sign-out">Sign out</span></p>
           </div>
@@ -90,7 +90,7 @@
             <p><span class="window-link">Back to main menu</span>.</p>
           </div>
           <div class="user-options">
-            <p>Signed in as: <span id="as-whom"></span></p>
+            <p>Signed in as: <span class="as-whom"></span></p>
             <p><span class="window-link to-change-password">Change password</span> |
                <span class="window-link sign-out">Sign out</span></p>
           </div>
@@ -114,7 +114,7 @@
             <p><span class="window-link">Back to main menu</span>.</p>
           </div>
           <div class="user-options">
-            <p>Signed in as: <span id="as-whom"></span></p>
+            <p>Signed in as: <span class="as-whom"></span></p>
             <p><span class="window-link to-change-password">Change password</span> |
                <span class="window-link sign-out">Sign out</span></p>
           </div>
@@ -131,7 +131,7 @@
             <p><span class="window-link">Back to main menu</span>.</p>
           </div>
           <div class="user-options">
-            <p>Signed in as: <span id="as-whom"></span></p>
+            <p>Signed in as: <span class="as-whom"></span></p>
             <p><span class="window-link to-change-password">Change password</span> |
                <span class="window-link sign-out">Sign out</span></p>
           </div>
@@ -143,9 +143,8 @@
             <label>Dose label
               <input class="form-field" type="text" name="doses[label]" value="">
             </label><br>
-            <!-- Medicine selector here-->
             <label>Choose a medicine
-              <select id="medicine-drop-list" class="data-list" name="doses[medicine_id]">
+              <select class="medicine-drop-list data-list" name="doses[medicine_id]">
 
               </select>
             </label>
@@ -162,7 +161,37 @@
             <p><span class="window-link">Back to main menu</span>.</p>
           </div>
           <div class="user-options">
-            <p>Signed in as: <span id="as-whom"></span></p>
+            <p>Signed in as: <span class="as-whom"></span></p>
+            <p><span class="window-link to-change-password">Change password</span> |
+               <span class="window-link sign-out">Sign out</span></p>
+          </div>
+        </div>
+
+        <div id="edit-dose-window" class="content form">
+          <form id="edit-dose">
+            <h2>Edit dose</h2>
+            <label>Dose label
+              <input id="edit-label" class="form-field" type="text" name="doses[label]" value="">
+            </label><br>
+            <label>Choose a medicine
+              <select id="edit-med-drop" class="medicine-drop-list data-list" name="doses[medicine_id]">
+
+              </select>
+            </label>
+            <p class="user-options">Don't see your medicine? <span class="window-link to-new-medicine">Create new medicine</span></p>
+            <label>Size of dose
+              <input id="edit-size" class="form-field" type="integer" name="doses[size]" maxlength="4" value="">
+            </label>
+            <label>Time
+              <input id="edit-time" class="form-field" type="text" name="doses[time]" value="">
+            </label>
+            <input type="submit" name="submit" value="Create new dose">
+          </form>
+          <div class="sign-link to-main">
+            <p><span class="window-link">Back to main menu</span>.</p>
+          </div>
+          <div class="user-options">
+            <p>Signed in as: <span class="as-whom"></span></p>
             <p><span class="window-link to-change-password">Change password</span> |
                <span class="window-link sign-out">Sign out</span></p>
           </div>

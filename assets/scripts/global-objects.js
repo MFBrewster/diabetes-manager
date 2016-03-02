@@ -1,11 +1,12 @@
 'use strict';
 
 let user = {};
-let app = {};
+let doseToEdit = {};
+let editId;
 const baseUrl = 'http://localhost:3000';
 
 module.exports = {
   user,
-  app,
+  editId,
   baseUrl,
 };

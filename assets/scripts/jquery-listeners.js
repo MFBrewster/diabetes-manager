@@ -1,10 +1,15 @@
 'use strict';
 
+const globalObjects = require('./global-objects');
 const userFunc = require('./user-functions');
 const medFunc = require('./medicine-functions');
 const viewBox = require('./content-box-control');
 
-
+const editSetIdAndGo = function(e) {
+  e.preventDefault();
+  globalObjects.editId = $(e.target).attr('data-id');
+  viewBox.switchTo.editDose();
+};
 
 let userHandler = function() {
   $('#sign-up').on('submit', userFunc.signUp);
@@ -14,9 +19,11 @@ let userHandler = function() {
 
   $('#new-medicine').on('submit', medFunc.newMedicine);
   $('#new-dose').on('submit', medFunc.newDose);
+  $('#edit-dose').on('submit', medFunc.editDose);
 
   $('#dose-list').on('click', '.delete-dose', medFunc.deleteDose);
 
+  $('#dose-list').on('click', '.edit-dose', editSetIdAndGo);
   $('#not-yet-user').on('click', viewBox.switchTo.signUp);
   $('#to-sign-in').on('click', viewBox.switchTo.signIn);
   $('.to-main').on('click', viewBox.switchTo.main);

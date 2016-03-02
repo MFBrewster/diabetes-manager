@@ -23,7 +23,7 @@ const userMedicines = function() {
 
 const medicinesDropList = function(medicines){
   let medListingTemplate = require('./handlebars-js/med-listing.handlebars');
-    $('#medicine-drop-list').append(medListingTemplate({medicines}));
+    $('.medicine-drop-list').append(medListingTemplate({medicines}));
 };
 
 const getMeds = function() {
@@ -34,7 +34,6 @@ const getMeds = function() {
       Authorization: 'Token token=' + globalObjects.user.token,
     }
   }).done(function(medicines){
-    console.log(medicines);
     medicinesDropList(medicines);
   });
 };
@@ -46,7 +45,7 @@ const displayDoses = function(users){
 
 const userDoses = function() {
   $.ajax({
-    url: globalObjects.baseUrl + '/doses/' + globalObjects.user.id,
+    url: globalObjects.baseUrl + '/doses/user/' + globalObjects.user.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + globalObjects.user.token,
@@ -57,9 +56,31 @@ const userDoses = function() {
   });
 };
 
+const getOneDose = function() {
+  $.ajax({
+    url: globalObjects.baseUrl + '/doses/' + globalObjects.editId,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + globalObjects.user.token,
+    }
+  }).done(function(data){
+    fillEditField(data.dose);
+  }).fail(function(data) {
+    console.error(data);
+  });
+};
+
+const fillEditField = function(dose) {
+  $("#edit-label").val(dose.label);
+  $("#edit-med-drop").val(dose.medicine.name);
+  $("#edit-size").val(dose.size);
+  $("#edit-time").val(dose.time);
+};
+
 
 module.exports = {
   userMedicines,
   userDoses,
   getMeds,
+  getOneDose,
 };

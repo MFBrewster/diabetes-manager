@@ -1,6 +1,6 @@
 'use strict';
 
-// const globalObjects = require('./global-objects');
+const globalObjects = require('./global-objects');
 const dataGen = require('./data-generators.js');
 const delayTime = 200;
 
@@ -48,6 +48,13 @@ const switchTo = {
     fadeOut();
     dataGen.getMeds();
     $('#new-dose-window').delay(delayTime).fadeIn();
+  },
+  editDose: function() {
+    fadeOut();
+    console.log(globalObjects);
+    dataGen.getOneDose()
+    dataGen.getMeds();
+    $('#edit-dose-window').delay(200).fadeIn();
   },
 };
 
