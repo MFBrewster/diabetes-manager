@@ -3,10 +3,16 @@
 const viewBox = require('./content-box-control');
 const globalObjects = require('./global-objects');
 
-const returnToMain = function() {
+const returnToNewDose = function() {
   viewBox.fadeOut();
   $('#as-whom').html(globalObjects.user.email);
-  viewBox.switchTo.main();
+  viewBox.switchTo.newDose();
+};
+
+const returnToDoses = function() {
+  viewBox.fadeOut();
+  $('#as-whom').html(globalObjects.user.email);
+  viewBox.switchTo.doses();
 };
 
 const newMedicine = function(e) {
@@ -21,16 +27,36 @@ const newMedicine = function(e) {
     contentType: false,
     processData: false,
     data: formData
-  }).done(function(data){
+  }).done(function(){
       $('.form-field').val('');
-      console.log(data);
-      returnToMain();
-  }).fail(function(jqxhr) {
+      returnToNewDose();
+  }).fail(function() {
     $('.form-field').val('');
-    console.error(jqxhr);
+  });
+};
+
+const newDose = function(e) {
+  e.preventDefault();
+  var formData = new FormData(e.target);
+  formData.append("doses[user_id]", globalObjects.user.id);
+  $.ajax({
+    url: globalObjects.baseUrl + '/doses',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + globalObjects.user.token,
+    },
+    contentType: false,
+    processData: false,
+    data: formData
+  }).done(function(){
+      $('.form-field').val('');
+      returnToDoses();
+  }).fail(function() {
+    $('.form-field').val('');
   });
 };
 
 module.exports = {
   newMedicine,
+  newDose,
 };

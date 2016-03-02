@@ -69,9 +69,6 @@
         </div>
 
         <div id="main-window" class="content">
-          <div class="to-new-medicine">
-            <p><span class="window-link">Add medication</span></p>
-          </div>
           <div id="to-medicines">
             <p><span class="window-link">Your prescriptions</span></p>
           </div>
@@ -148,7 +145,7 @@
             </label><br>
             <!-- Medicine selector here-->
             <label>Choose a medicine
-              <select id="medicine-drop-list" name="doses[medicine_id]">
+              <select id="medicine-drop-list" class="data-list" name="doses[medicine_id]">
 
               </select>
             </label>
@@ -157,7 +154,7 @@
               <input class="form-field" type="integer" name="doses[size]" maxlength="4" value="">
             </label>
             <label>Time
-              <input class="large form-field" type="text" name="medicines[notes]" value="">
+              <input class="form-field" type="text" name="doses[time]" value="">
             </label>
             <input type="submit" name="submit" value="Create new dose">
           </form>

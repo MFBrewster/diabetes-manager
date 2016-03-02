@@ -9,8 +9,7 @@ const hide = function() {
 };
 
 const fadeOut = function() {
-  $('#med-list').html('');
-  $('#dose-list').html('');
+  $('.data-list').html('');
   $('.content').fadeOut(delayTime);
 };
 
