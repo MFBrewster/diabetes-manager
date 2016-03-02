@@ -65,12 +65,8 @@ const deleteDose = function(e) {
     headers: {
       Authorization: 'Token token=' + globalObjects.user.token,
     }
-  }).done(function(data){
-    console.log(data);
-    $('.data-list').html('');
-    dataGen.userDoses();
-  }).fail(function(data) {
-    console.error(data);
+  }).done(function(){
+    returnToDoses();
   });
 };
 
