@@ -3,21 +3,21 @@
 // const viewBox = require('./content-box-control');
 const globalObjects = require('./global-objects');
 
-const displayUserMedicines = function(users){
+const displayUserMedicines = function(medicines){
   let medListingTemplate = require('./handlebars-js/user-med-listing.handlebars');
-    $('#med-list').append(medListingTemplate({users}));
+    $('#med-list').append(medListingTemplate({medicines}));
 };
 
 const userMedicines = function() {
   $.ajax({
-    url: globalObjects.baseUrl + '/prescriptions/' + globalObjects.user.id,
+    url: globalObjects.baseUrl + '/medicines?limit=user',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + globalObjects.user.token,
     },
     dataType: 'json'
-  }).done(function(users){
-    displayUserMedicines(users);
+  }).done(function(data){
+    displayUserMedicines(data);
   });
 };
 
@@ -34,26 +34,34 @@ const getMeds = function() {
       Authorization: 'Token token=' + globalObjects.user.token,
     }
   }).done(function(medicines){
+    console.log(medicines);
     medicinesDropList(medicines);
   });
 };
 
-const displayDoses = function(users){
+const displayDoses = function(doses){
   let medListingTemplate = require('./handlebars-js/dose-listing.handlebars');
-    $('#dose-list').append(medListingTemplate({users}));
+    $('#dose-list').append(medListingTemplate({doses}));
 };
 
 const userDoses = function() {
   $.ajax({
-    url: globalObjects.baseUrl + '/doses/user/' + globalObjects.user.id,
+    url: globalObjects.baseUrl + '/doses',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + globalObjects.user.token,
     },
     dataType: 'json'
-  }).done(function(users){
-    displayDoses(users);
+  }).done(function(doses){
+    displayDoses(doses);
   });
+};
+
+const fillEditField = function(dose) {
+  $("#edit-label").val(dose.label);
+  $("#edit-med-drop").val(dose.medicine.name);
+  $("#edit-size").val(dose.size);
+  $("#edit-time").val(dose.time);
 };
 
 const getOneDose = function() {
@@ -69,14 +77,6 @@ const getOneDose = function() {
     console.error(data);
   });
 };
-
-const fillEditField = function(dose) {
-  $("#edit-label").val(dose.label);
-  $("#edit-med-drop").val(dose.medicine.name);
-  $("#edit-size").val(dose.size);
-  $("#edit-time").val(dose.time);
-};
-
 
 module.exports = {
   userMedicines,

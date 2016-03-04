@@ -37,7 +37,6 @@ const newMedicine = function(e) {
 const newDose = function(e) {
   e.preventDefault();
   let formData = new FormData(e.target);
-  formData.append("doses[user_id]", globalObjects.user.id);
   $.ajax({
     url: globalObjects.baseUrl + '/doses',
     method: 'POST',
