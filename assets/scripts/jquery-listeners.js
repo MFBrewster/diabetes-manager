@@ -35,6 +35,9 @@ let userHandler = function() {
 };
 
 $(document).ready(() => {
+  document.location.hostname === 'localhost' ?
+    globalObjects.baseUrl = 'http://localhost:3000' :
+    globalObjects.baseUrl = 'https://diabetes-manager.herokuapp.com/';
   viewBox.hide();
   userHandler();
   $('#sign-in-window').show();
