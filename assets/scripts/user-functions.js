@@ -15,7 +15,7 @@ const assignUserData = function(data) {
 
 const signUp = function(e) {
   e.preventDefault();
-  var formData = new FormData(e.target);
+  let formData = new FormData(e.target);
   $.ajax({
     url: globalObjects.baseUrl + '/sign-up',
     method: 'POST',
@@ -23,9 +23,9 @@ const signUp = function(e) {
     processData: false,
     data: formData
   }).done(function(data){
+    console.log(data);
     $('.form-field').val('');
-    assignUserData(data);
-    successToMain();
+    viewBox.switchTo.signIn();
   }).fail(function(jqxhr) {
     $('.form-field').val('');
     console.error(jqxhr);
