@@ -130,9 +130,9 @@ webpackJsonp([0],[
 	    processData: false,
 	    data: formData
 	  }).done(function (data) {
+	    console.log(data);
 	    $('.form-field').val('');
-	    assignUserData(data);
-	    successToMain();
+	    viewBox.switchTo.signIn();
 	  }).fail(function (jqxhr) {
 	    $('.form-field').val('');
 	    console.error(jqxhr);
