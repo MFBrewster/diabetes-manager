@@ -20,7 +20,6 @@ let userHandler = function() {
   $('#new-medicine').on('submit', medFunc.newMedicine);
   $('#new-dose').on('submit', medFunc.newDose);
   $('#edit-dose').on('submit', medFunc.editDose);
-
   $('#dose-list').on('click', '.delete-dose', medFunc.deleteDose);
 
   $('#dose-list').on('click', '.edit-dose', editSetIdAndGo);
