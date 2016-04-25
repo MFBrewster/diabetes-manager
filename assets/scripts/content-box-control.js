@@ -52,7 +52,7 @@ const switchTo = {
   editDose: function() {
     fadeOut();
     console.log(globalObjects);
-    dataGen.getOneDose()
+    dataGen.getOneDose();
     dataGen.getMeds();
     $('#edit-dose-window').delay(200).fadeIn();
   },
